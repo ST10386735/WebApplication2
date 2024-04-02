@@ -1,0 +1,122 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<body class="align-items-sm-center align" style="background-color:#D3CBB5">
+    <div class="box">
+        <h1>KhumaloCraft</h1>
+        <p>premium handcrafted artisan products.</p>
+    </div>
+    <br />
+    <br />
+    <div class="grid">
+        <div class="card">
+            <img src="/lib/images/instagram.jpg" alt="Card Image" width = "200" hight="200">
+            <div class="card-content">
+                <h2>Instagram</h2>
+                <a href="www.instagram.com" target="_self" title="instagram">
+                    click here
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/lib/images/linked.jpg" alt="Card Image">
+            <div class="card-content">
+                <h2>LinkedIn</h2>
+                
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="/lib/images/threads.jpg" alt="Card Image">
+            <div class="card-content">
+                <h2>Threads</h2>
+                <p>R3500</p>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    .box {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+        padding: 20px;
+    }
+
+    .grid-item {
+        background-color: #f1f1f1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+        .grid-item h2 {
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+    .card {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+        .card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-image: url("image.jpg");
+            background-size: cover;
+            filter: blur(5px);
+            transition: filter 0.3s ease;
+            z-index: -1;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+            .card:hover:before {
+                filter: blur(0);
+            }
+
+    .card-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .card:hover .card-content {
+        opacity: 1;
+    }
+
+    .card-content h2 {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+</style>

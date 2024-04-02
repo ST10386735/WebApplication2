@@ -1,0 +1,59 @@
+﻿@page
+@model WebApplication2.Pages.contactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+
+<body style="background-color:#D3CBB5">
+    <div class="text-center">
+        <h1>Contact Us</h1>
+    </div>
+    
+        <br /><br />
+    <div >
+        
+        <form action="/submit-contact-form" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+</body>
+<style>
+    form {
+        margin-top: 2rem;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 0.5rem;
+        border: none;
+        cursor: pointer;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+</style>
